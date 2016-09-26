@@ -1,0 +1,21 @@
+Userstories:
+
+1. As a user I want to display information about me including: name, location, website, bio and a profile picture.
+
+2. As a user I want to see information about myself and other users.
+
+3. As a user I want to notify others about my current status (tweet).
+
+4. As a user I want to see my past tweets and other people's past tweets.
+
+5. As a user I want to follow other people.
+
+6. As a user I want to see tweets of people that I follow.
+
+7. As a user I want to see tweets that mention me.
+
+8. As a user I want to see who is following who.
+
+9. As a user I want to see currently trending topics.
+
+10. As a user I want to see recent tweets of a trending topic.
