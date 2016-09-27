@@ -16,7 +16,7 @@ type alias Profile = {
 }
 
 type alias Picture = {
-    mimeType : Mimetype String String,
+    mimeType : MimeType String String,
     fileName : FileName String,
     data     : Base64 String
 }

@@ -1,4 +1,4 @@
-package sb.fontys.esw.kwetter.services.trends;
+package sb.fontys.esw.kwetter.services;
 
 import java.util.List;
 import java.util.function.Function;

@@ -1,4 +1,4 @@
-package sb.fontys.esw.kwetter.services.history;
+package sb.fontys.esw.kwetter.services;
 
 /**
  *

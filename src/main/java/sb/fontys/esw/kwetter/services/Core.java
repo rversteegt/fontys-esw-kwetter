@@ -1,5 +1,6 @@
-package sb.fontys.esw.kwetter.services.core;
+package sb.fontys.esw.kwetter.services;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import sb.fontys.esw.kwetter.auth.tokens.users.EditUserToken;
@@ -18,7 +19,7 @@ public interface Core {
      * @param token
      * @return
      */
-    public abstract Supplier<User> viewUser(ViewUserToken token);
+    public abstract Supplier<Optional<User>> viewUser(ViewUserToken token);
 
     /**
      * Provides the ability to add a tweet.

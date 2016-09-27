@@ -1,4 +1,4 @@
-package sb.fontys.esw.kwetter.services.core;
+package sb.fontys.esw.kwetter.services;
 
 /**
  *
