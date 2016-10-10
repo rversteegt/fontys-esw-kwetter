@@ -14,7 +14,7 @@ public class Password implements Serializable {
         this.password = password;
     }
 
-    public String getPassword() {
+    public String toString() {
         return password;
     }
 }

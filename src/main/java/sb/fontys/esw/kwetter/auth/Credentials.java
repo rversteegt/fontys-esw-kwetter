@@ -43,4 +43,9 @@ public class Credentials implements Serializable {
     public Password getPassword() {
         return password;
     }
+
+    public boolean match(Credentials credentials) {
+        return this.password.toString().equals(credentials.password.toString()) &&
+            this.username.toString().equals(credentials.username.toString());
+    }
 }
