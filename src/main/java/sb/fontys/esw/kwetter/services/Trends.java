@@ -2,7 +2,6 @@ package sb.fontys.esw.kwetter.services;
 
 import java.util.List;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import sb.fontys.esw.kwetter.auth.tokens.tweets.ViewTweetsToken;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
 
@@ -17,7 +16,7 @@ public interface Trends {
      * @param token
      * @return
      */
-    public abstract Supplier<List<Hashtag>> listHastags(ViewTweetsToken token);
+    public abstract List<Hashtag> listHastags(ViewTweetsToken token);
 
     /**
      * Provides the ability to obtain all tweets that mention a given hashtag.

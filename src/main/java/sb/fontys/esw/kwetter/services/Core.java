@@ -1,12 +1,11 @@
 package sb.fontys.esw.kwetter.services;
 
 import java.util.Optional;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 import sb.fontys.esw.kwetter.auth.tokens.users.EditUserToken;
 import sb.fontys.esw.kwetter.auth.tokens.users.ViewUserToken;
 import sb.fontys.esw.kwetter.model.profile.Profile;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
+import sb.fontys.esw.kwetter.model.users.User;
 
 /**
  *
@@ -19,26 +18,29 @@ public interface Core {
      * @param token
      * @return
      */
-    public abstract Supplier<Optional<User>> viewUser(ViewUserToken token);
+    public abstract Optional<User> viewUser(ViewUserToken token);
 
     /**
      * Provides the ability to add a tweet.
      * @param token
+     * @param tweet
      * @return
      */
-    public abstract Consumer<Tweet> addTweet(EditUserToken token);
+    public abstract User addTweet(EditUserToken token, Tweet tweet);
 
     /**
      * Provides the ability to add a follower.
      * @param token
+     * @param follower
      * @return
      */
-    public abstract Consumer<User> addFollower(EditUserToken token);
+    public abstract User addFollower(EditUserToken token, User follower);
 
     /**
      * Provides the ability to update a profile.
      * @param token
+     * @param profile
      * @return
      */
-    public abstract Consumer<Profile> updateProfile(EditUserToken token);
+    public abstract User updateProfile(EditUserToken token, Profile profile);
 }

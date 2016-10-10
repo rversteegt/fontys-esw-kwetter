@@ -1,22 +1,36 @@
 package sb.fontys.esw.kwetter.model.profile;
 
+import java.io.Serializable;
 import java.util.Optional;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author Robert
  */
-public class Profile {
+@Entity
+public class Profile implements Serializable {
     
+    @Id
     private final Name name;
     
-    private final Optional<Location> location;
+    @Column
+    private final Location location;
     
-    private final Optional<Website> website;
+    @Column
+    private final Website website;
     
-    private final Optional<Bio> bio;
+    @Column
+    private final Bio bio;
 
-    private final Optional<Picture> picture;
+    @Column
+    private final Picture picture;
+    
+    protected Profile() {
+        this(null, Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty());
+    }
 
     public Profile(
         Name name,
@@ -26,10 +40,10 @@ public class Profile {
         Optional<Picture> picture
     ) {
         this.name = name;
-        this.location = location;
-        this.website = website;
-        this.bio = bio;
-        this.picture = picture;
+        this.location = location.orElse(null);
+        this.website = website.orElse(null);
+        this.bio = bio.orElse(null);
+        this.picture = picture.orElse(null);
     }
 
     public Name getName() {
@@ -37,18 +51,18 @@ public class Profile {
     }
 
     public Optional<Location> getLocation() {
-        return location;
+        return Optional.ofNullable(location);
     }
 
     public Optional<Website> getWebsite() {
-        return website;
+        return Optional.ofNullable(website);
     }
 
     public Optional<Bio> getBio() {
-        return bio;
+        return Optional.ofNullable(bio);
     }
 
     public Optional<Picture> getPicture() {
-        return picture;
+        return Optional.ofNullable(picture);
     }
 }

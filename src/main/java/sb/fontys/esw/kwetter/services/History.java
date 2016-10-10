@@ -2,11 +2,10 @@ package sb.fontys.esw.kwetter.services;
 
 import java.util.List;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import sb.fontys.esw.kwetter.auth.tokens.tweets.ViewTweetsToken;
 import sb.fontys.esw.kwetter.auth.tokens.users.ViewUserToken;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
-import sb.fontys.esw.kwetter.services.User;
+import sb.fontys.esw.kwetter.model.users.User;
 
 /**
  *
@@ -26,7 +25,7 @@ public interface History {
      * @param token
      * @return
      */
-    public abstract Supplier<List<Tweet>> timeline(ViewUserToken token);
+    public abstract List<Tweet> timeline(ViewUserToken token);
 
     /**
      * Provides the ability to view tweets that mention a given user.
