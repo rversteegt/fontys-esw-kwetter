@@ -1,10 +1,12 @@
 package sb.fontys.esw.kwetter.model.tweets;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Robert
  */
-public class Message {
+public class Message implements Serializable  {
 
     private final String message;
 

@@ -1,10 +1,12 @@
 package sb.fontys.esw.kwetter.model.profile;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Robert
  */
-public class Bio {
+public class Bio implements Serializable {
     
     private final String bio;
 

@@ -39,6 +39,7 @@ public class CoreCollectionImpl implements Core {
             ).collect(Collectors.toList());
 
         final User newUser = new User(
+            user.getId(),
             user.getCredentials(),
             user.getProfile(),
             user.getFollowing(),
@@ -66,6 +67,7 @@ public class CoreCollectionImpl implements Core {
             ).collect(Collectors.toList());
 
         final User newUser = new User(
+            user.getId(),
             user.getCredentials(),
             user.getProfile(),
             user.getFollowing(),

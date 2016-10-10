@@ -1,10 +1,12 @@
 package sb.fontys.esw.kwetter.auth;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Robert
  */
-public class Password {
+public class Password implements Serializable {
     
     private final String password;
 

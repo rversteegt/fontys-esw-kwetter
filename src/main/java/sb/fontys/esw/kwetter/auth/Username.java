@@ -1,10 +1,12 @@
 package sb.fontys.esw.kwetter.auth;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Robert
  */
-public class Username {
+public class Username implements Serializable {
     private final String username;
 
     public Username(String username) {

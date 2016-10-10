@@ -1,12 +1,13 @@
 package sb.fontys.esw.kwetter.model.profile;
 
+import java.io.Serializable;
 import java.net.URL;
 
 /**
  *
  * @author Robert
  */
-public class Website {
+public class Website implements Serializable {
     
     private final URL url;
 

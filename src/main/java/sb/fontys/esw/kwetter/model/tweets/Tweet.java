@@ -28,6 +28,9 @@ public class Tweet implements Serializable {
     @Temporal(value=TemporalType.TIMESTAMP)
     private final Date timestamp;
 
+    /**
+     * @deprecated
+     */
     protected Tweet() {
         this(Optional.empty(), null, null);
     }

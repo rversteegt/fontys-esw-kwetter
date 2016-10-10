@@ -27,6 +27,9 @@ public class Picture implements Serializable {
     @Column
     private final String fileName;
 
+    /**
+     * @deprecated
+     */
     protected Picture() {
         this(null, null, null);
     }

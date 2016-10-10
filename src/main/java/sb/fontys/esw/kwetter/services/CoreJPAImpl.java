@@ -14,13 +14,18 @@ import sb.fontys.esw.kwetter.auth.tokens.users.ViewUserToken;
 import sb.fontys.esw.kwetter.model.profile.Profile;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
 import sb.fontys.esw.kwetter.model.users.User;
+import sb.fontys.esw.kwetter.services.qualifiers.Primary;
 
 @Stateless
+@Primary
 public class CoreJPAImpl implements Core {
     
     @PersistenceContext(unitName = "kwetter-main")
     private final EntityManager entityManager;
 
+    /**
+     * @deprecated
+     */
     protected CoreJPAImpl() {
         this(null);
     }
@@ -63,17 +68,19 @@ public class CoreJPAImpl implements Core {
             concat(follower.getFollowing().stream(), Stream.of(user)).
             collect(Collectors.toList());
         
+        final List<User> newFollowers = Stream.
+            concat(user.getFollowers().stream(), Stream.of(follower)).
+            collect(Collectors.toList());
+
         final User newOtherUser = new User(
             follower.getId(),
             follower.getCredentials(),
             follower.getProfile(),
-            follower.getFollowing(),
-            newFollowers,
+            newFollowing,
+            follower.getFollowers(),
             follower.getTweets());
-        
-        final List<User> newFollowers = Stream.
-            concat(user.getFollowers().stream(), Stream.of(follower)).
-            collect(Collectors.toList());
+
+        entityManager.merge(newOtherUser);
         
         final User newUser = new User(
             user.getId(),
@@ -83,7 +90,7 @@ public class CoreJPAImpl implements Core {
             newFollowers,
             user.getTweets());
         
-        return newUser;
+        return entityManager.merge(newUser);
     }
 
     @Override
@@ -97,13 +104,11 @@ public class CoreJPAImpl implements Core {
         final User newUser = new User(
             user.getId(),
             user.getCredentials(),
-            user.getProfile(),
+            profile,
             user.getFollowing(),
             user.getFollowers(),
             user.getTweets());
         
-        entityManager.merge(newUser);
-        
-        return newUser;
+        return entityManager.merge(newUser);
     }
 }

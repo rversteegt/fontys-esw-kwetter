@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import sb.fontys.esw.kwetter.auth.Credentials;
@@ -32,18 +33,21 @@ public class User implements Serializable {
     @OneToOne
     private final Profile profile;
 
-    @Column
+    @JoinColumn
     @ManyToOne
     private final List<User> following;
 
-    @Column
+    @JoinColumn
     @ManyToOne
     private final List<User> followers;
 
-    @Column
+    @JoinColumn
     @ManyToOne
     private final List<Tweet> tweets;
 
+    /**
+     * @deprecated
+     */
     protected User() {
         this(Optional.empty(), null, null, null, null, null);
     }

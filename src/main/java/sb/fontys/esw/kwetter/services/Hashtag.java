@@ -1,10 +1,12 @@
 package sb.fontys.esw.kwetter.services;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Robert
  */
-public class Hashtag {
+public class Hashtag implements Serializable {
 
     private final String hashtag;
 
