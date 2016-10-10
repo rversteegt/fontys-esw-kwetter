@@ -4,10 +4,9 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import sb.fontys.esw.kwetter.auth.tokens.tweets.ViewTweetsToken;
+import sb.fontys.esw.kwetter.auth.services.ViewTweetsToken;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
 import sb.fontys.esw.kwetter.services.qualifiers.Primary;
 
@@ -27,7 +26,6 @@ public class TrendsJPAImpl implements Trends {
         this(null);
     }
 
-    @Inject
     public TrendsJPAImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }

@@ -5,12 +5,11 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import sb.fontys.esw.kwetter.auth.Username;
-import sb.fontys.esw.kwetter.auth.tokens.tweets.ViewTweetsToken;
-import sb.fontys.esw.kwetter.auth.tokens.users.ViewUserToken;
+import sb.fontys.esw.kwetter.auth.services.ViewTweetsToken;
+import sb.fontys.esw.kwetter.auth.services.ViewUserToken;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
 import sb.fontys.esw.kwetter.model.users.User;
 import sb.fontys.esw.kwetter.services.qualifiers.Primary;
@@ -31,7 +30,6 @@ public class HistoryJPAImpl implements History {
         this(null);
     }
 
-    @Inject
     public HistoryJPAImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }

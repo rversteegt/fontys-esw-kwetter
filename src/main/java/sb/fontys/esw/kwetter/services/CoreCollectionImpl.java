@@ -1,25 +1,27 @@
 package sb.fontys.esw.kwetter.services;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import javax.inject.Inject;
+import javax.ejb.Stateless;
 import sb.fontys.esw.kwetter.auth.Username;
-import sb.fontys.esw.kwetter.auth.tokens.users.EditUserToken;
-import sb.fontys.esw.kwetter.auth.tokens.users.ViewUserToken;
+import sb.fontys.esw.kwetter.auth.services.EditUserToken;
+import sb.fontys.esw.kwetter.auth.services.ViewUserToken;
 import sb.fontys.esw.kwetter.model.profile.Profile;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
 import sb.fontys.esw.kwetter.model.users.User;
+import sb.fontys.esw.kwetter.services.qualifiers.Secondary;
 
+@Stateless
+@Secondary
 public class CoreCollectionImpl implements Core {
 
-    private final Map<Username, User> users;
+    private final Map<Username, User> users = new HashMap<>();
 
-    @Inject
-    public CoreCollectionImpl(Map<Username, User> users) {
-        this.users = users;
+    protected CoreCollectionImpl() {
     }
 
     @Override

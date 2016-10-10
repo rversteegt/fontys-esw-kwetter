@@ -1,23 +1,27 @@
 package sb.fontys.esw.kwetter.services;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import javax.inject.Inject;
+import javax.ejb.Stateless;
 import sb.fontys.esw.kwetter.auth.Username;
-import sb.fontys.esw.kwetter.auth.tokens.tweets.ViewTweetsToken;
+import sb.fontys.esw.kwetter.auth.services.ViewTweetsToken;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
 import sb.fontys.esw.kwetter.model.users.User;
+import sb.fontys.esw.kwetter.services.qualifiers.Secondary;
 
-
+@Stateless
+@Secondary
 public class TrendsCollectionImpl implements Trends {
 
-    private final Map<Username, User> users;
+    private final Map<Username, User> users = new HashMap<>();
 
-    @Inject
-    public TrendsCollectionImpl(Map<Username, User> users) {
-        this.users = users;
+    /**
+     * @deprecated
+     */
+    protected TrendsCollectionImpl() {
     }
     
     @Override

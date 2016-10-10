@@ -2,8 +2,8 @@ package sb.fontys.esw.kwetter.services;
 
 import java.util.List;
 import java.util.function.Function;
-import sb.fontys.esw.kwetter.auth.tokens.tweets.ViewTweetsToken;
-import sb.fontys.esw.kwetter.auth.tokens.users.ViewUserToken;
+import sb.fontys.esw.kwetter.auth.services.ViewTweetsToken;
+import sb.fontys.esw.kwetter.auth.services.ViewUserToken;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
 import sb.fontys.esw.kwetter.model.users.User;
 

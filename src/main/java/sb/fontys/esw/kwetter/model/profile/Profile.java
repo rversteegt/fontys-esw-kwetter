@@ -5,6 +5,7 @@ import java.util.Optional;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 /**
@@ -26,7 +27,7 @@ public class Profile implements Serializable {
     @Column
     private final Bio bio;
 
-    @Column
+    @JoinColumn
     @OneToOne
     private final Picture picture;
 

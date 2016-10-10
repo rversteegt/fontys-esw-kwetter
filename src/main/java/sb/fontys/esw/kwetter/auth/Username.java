@@ -7,6 +7,7 @@ import java.io.Serializable;
  * @author Robert
  */
 public class Username implements Serializable {
+
     private final String username;
 
     public Username(String username) {

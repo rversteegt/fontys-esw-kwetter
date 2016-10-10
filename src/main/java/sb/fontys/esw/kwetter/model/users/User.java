@@ -3,12 +3,10 @@ package sb.fontys.esw.kwetter.model.users;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import sb.fontys.esw.kwetter.auth.Credentials;
 import sb.fontys.esw.kwetter.model.profile.Profile;
@@ -25,24 +23,19 @@ public class User implements Serializable {
     @GeneratedValue
     private int id;
     
-    @Column
     @OneToOne
     private final Credentials credentials;
 
-    @Column
     @OneToOne
     private final Profile profile;
 
-    @JoinColumn
-    @ManyToOne
+    @OneToMany
     private final List<User> following;
 
-    @JoinColumn
-    @ManyToOne
+    @OneToMany
     private final List<User> followers;
 
-    @JoinColumn
-    @ManyToOne
+    @OneToMany
     private final List<Tweet> tweets;
 
     /**
@@ -60,7 +53,7 @@ public class User implements Serializable {
         List<User> followers,
         List<Tweet> tweets
     ) {
-        this.id = id.orElse(null);
+        this.id = id.orElse(-1);
         this.credentials = credentials;
         this.profile = profile;
         this.following = following;

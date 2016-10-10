@@ -1,4 +1,4 @@
-package sb.fontys.esw.kwetter.auth.tokens;
+package sb.fontys.esw.kwetter.auth.services;
 
 /**
  *

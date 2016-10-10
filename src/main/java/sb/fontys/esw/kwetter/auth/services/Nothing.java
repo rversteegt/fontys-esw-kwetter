@@ -1,4 +1,4 @@
-package sb.fontys.esw.kwetter.auth.tokens;
+package sb.fontys.esw.kwetter.auth.services;
 
 import java.util.Optional;
 
@@ -8,7 +8,13 @@ import java.util.Optional;
  */
 public class Nothing {
 
+    private Nothing() {}
+
     public Optional<Nothing> toOptional() {
         return Optional.empty();
+    }
+
+    public static Nothing nothing() {
+        return new Nothing();
     }
 }

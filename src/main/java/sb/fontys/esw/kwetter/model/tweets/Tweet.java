@@ -36,7 +36,7 @@ public class Tweet implements Serializable {
     }
     
     public Tweet(Optional<Integer> id, Message message, Date timestamp) {
-        this.id = id.orElse(null);
+        this.id = id.orElse(-1);
         this.message = message;
         this.timestamp = timestamp;
     }

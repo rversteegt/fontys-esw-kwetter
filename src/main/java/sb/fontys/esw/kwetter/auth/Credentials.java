@@ -32,6 +32,10 @@ public class Credentials implements Serializable {
         this.password = password;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public Username getUsername() {
         return username;
     }

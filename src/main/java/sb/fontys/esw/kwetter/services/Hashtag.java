@@ -10,7 +10,7 @@ public class Hashtag implements Serializable {
 
     private final String hashtag;
 
-    Hashtag(String hashtag) {
+    public Hashtag(String hashtag) {
         this.hashtag = hashtag;
     }
 

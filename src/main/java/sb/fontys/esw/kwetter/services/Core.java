@@ -1,8 +1,8 @@
 package sb.fontys.esw.kwetter.services;
 
 import java.util.Optional;
-import sb.fontys.esw.kwetter.auth.tokens.users.EditUserToken;
-import sb.fontys.esw.kwetter.auth.tokens.users.ViewUserToken;
+import sb.fontys.esw.kwetter.auth.services.EditUserToken;
+import sb.fontys.esw.kwetter.auth.services.ViewUserToken;
 import sb.fontys.esw.kwetter.model.profile.Profile;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
 import sb.fontys.esw.kwetter.model.users.User;

@@ -5,12 +5,11 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import sb.fontys.esw.kwetter.auth.Username;
-import sb.fontys.esw.kwetter.auth.tokens.users.EditUserToken;
-import sb.fontys.esw.kwetter.auth.tokens.users.ViewUserToken;
+import sb.fontys.esw.kwetter.auth.services.EditUserToken;
+import sb.fontys.esw.kwetter.auth.services.ViewUserToken;
 import sb.fontys.esw.kwetter.model.profile.Profile;
 import sb.fontys.esw.kwetter.model.tweets.Tweet;
 import sb.fontys.esw.kwetter.model.users.User;
@@ -30,7 +29,6 @@ public class CoreJPAImpl implements Core {
         this(null);
     }
 
-    @Inject
     public CoreJPAImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }

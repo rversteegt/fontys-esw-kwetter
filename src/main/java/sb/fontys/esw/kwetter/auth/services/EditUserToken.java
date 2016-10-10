@@ -1,7 +1,6 @@
-package sb.fontys.esw.kwetter.auth.tokens.users;
+package sb.fontys.esw.kwetter.auth.services;
 
 import sb.fontys.esw.kwetter.auth.Username;
-import sb.fontys.esw.kwetter.auth.tokens.Token;
 
 
 public class EditUserToken extends Token<Username> {
